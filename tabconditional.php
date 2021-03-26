@@ -1,0 +1,14 @@
+<?php
+$tabscid = $_GET['id'];
+if (!empty($tabscid)) {
+	$deftabval = "$tabprefix$tabscid"; // where $tabprefix is defined in requested page as in onclick="opentab(event, 'tabprefix #number')"
+}
+if ((!empty($tabscid)) || ($deftab == 1)) { /* checks if the page is requested with an ID as a form of "shortcut" to one of its tabs,
+                                               or if with $deftab = '1'; it's supposed to have a default tab open.*/
+	?><a id="defaultOpen" class="tablinks" onclick="opentab(event, '<?php echo ($deftabval);?>')" href="<?php if (empty($tabscid)) {echo "#";} else {echo "#tabpanel";}?>"></a><?php ; //on this line you can see how to make it so when defaultly opening a tab, it stays on top of the page, but when using a shortcut, it scrolls to the tab for example.
+	?><script nonce="qzd349q998" src="/../src/scripts/fscdeftab.min.js"></script><?php ;
+} else {
+	?><script nonce="qzd349q998" src="/../src/scripts/fsctab.min.js"></script><?php ; /*if both of the above conditions are false, 
+  it will use the script's version that doesn't ask for a default <a> to launch a tab when the page loads. Note that this is compatible with the scroll.js jquery script!*/
+}
+?>
