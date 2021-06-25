@@ -1,5 +1,5 @@
 <?php
-$tabscid = $_GET['id'];
+$tabscid = $_GET['id']; // that in your header, and the rest should be in your footer.
 if (!empty($tabscid)) {
 	$deftabval = "$tabprefix$tabscid"; // where $tabprefix is defined in requested page as in onclick="opentab(event, 'tabprefix #number')"
 }
