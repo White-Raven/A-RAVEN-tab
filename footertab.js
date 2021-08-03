@@ -11,10 +11,3 @@ function opentab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-document.querySelectorAll('.tablinks').forEach(item => {
-          $(item).click(function() {
-          opentab(event,item.dataset.tab);
-        });
-  });
-
