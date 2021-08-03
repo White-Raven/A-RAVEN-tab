@@ -15,7 +15,7 @@ if (!empty($tabscid)) {
 }
 if ((!empty($tabscid)) || ($deftab == 1)) { /* checks if the page is requested with an ID as a form of "shortcut" to one of its tabs,
                                                or if with $deftab = '1'; it's supposed to have a default tab open.*/
-	?><a id="defaultOpen" class="tablinks" onclick="opentab(event, '<?php echo ($deftabval);?>')" href="<?php if (empty($tabscid)) {echo "#";} else {echo "#tabpanel";}?>"></a><?php ; //on this line you can see how to make it so when defaultly opening a tab, it stays on top of the page, but when using a shortcut, it scrolls to the tab for example.
+	?><a id="defaultOpen" class="tablinks" data-evt="event" data-tab="<?php echo ($deftabval);?>" href="<?php if (empty($tabscid)) {echo "#";} else {echo "#tabpanel";}?>"></a><?php ; //on this line you can see how to make it so when defaultly opening a tab, it stays on top of the page, but when using a shortcut, it scrolls to the tab for example.
 	?><script src="/../src/scripts/fscdeftab.min.js"></script><?php ;
 } else {
 	?><script src="/../src/scripts/fsctab.min.js"></script><?php ; /*if both of the above conditions are false, 
