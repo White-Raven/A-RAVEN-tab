@@ -13,8 +13,7 @@ function opentab(evt, tabName) {
 }
 
 document.querySelectorAll('.tablinks').forEach(item => {
-          $(item).click(function() {
+          item.addEventListener('click', function() {
           opentab(event,item.dataset.tab);
         });
   });
-
